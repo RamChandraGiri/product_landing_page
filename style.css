@@ -1,3 +1,7 @@
+html {
+    font-size: 10px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -26,13 +30,51 @@ body {
 header {
     position: fixed;
     top: 0;
-    min-height: 75px;
+    min-height: auto;
     Width: 100%;
     padding: 0px 20px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     background-color: #eee;
+}
+
+@media screen and (max-width: 650px) {
+    header {
+        flex-direction: column;
+    }
+}
+
+#company-logo-name > #header-img {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 20px;
+    font-size: 1rem;
+  }
+  
+@media (max-width: 650px) {
+    #company-logo-name > #header-img {
+      margin: 0 auto;
+      font-size: 0.5rem;
+    }
+}
+
+header #company-logo-name {
+    width: 60vw;
+}
+
+@media (max-width: 650px) {
+    header #company-logo-name {
+      margin-top: 15px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+    }
 }
 
 nav#nav-bar ul {
@@ -47,31 +89,31 @@ nav#nav-bar ul li a {
     color: #123;
 }
 
-#header-img {
-    width: 15rem;
-    margin-left: -1rem;
-}
-
 @media screen and (max-width: 650px) {
-    header {
-        flex-direction: column;
-    }
-
     nav#nav-bar ul {
         display: block;
         text-align: center;
-    }
-
-    #header-img {
-        margin: 1rem 0;
-        text-align: center;
-    }
+    }    
 }
 
 #product-pitch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin: 2rem auto;
+    height: 200px;
+    margin-top: 50px;
+    padding-top: 2rem;
 }
+
+@media screen and (max-width: 650px) {
+    #product-pitch {
+        margin-top: 120px;
+        padding-top: 2rem;
+    }
+}
+
 
 #product-pitch input {
     padding: .3rem;
@@ -108,6 +150,7 @@ nav#nav-bar ul li a {
 
 .grid details p {
     opacity: 0.8;
+    text-align: justify;
 }
 
 @media screen and (max-width: 600px) {
@@ -132,18 +175,18 @@ section#pricing {
     align-items: center;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-auto-rows: repeat(3, 300px);
+    grid-auto-rows: repeat(3, 200px);
     margin-bottom: 5rem;
 }
 
 section#pricing .product {
     text-align: center;
     line-height: 2.5;
-    border: 1px solid #123;
+    border: 1px solid gold;
 }
 
 section#pricing .level {
-    background: #456;
+    background: #E5E4E2;
 }
 
 section#pricing h2 {
@@ -152,12 +195,15 @@ section#pricing h2 {
 }
 
 section#pricing .button {
-    background: #f1c53e;
+    background: gold;
     display: block;
     width: 150px;
+    height: auto;
     margin: 1rem auto;
+    padding: 0.5rem;
+    border-radius: 5px;
     text-transform: uppercase;
-    color: #111;
+    color: black;
     font-weight: bold;
 }
 
@@ -171,6 +217,7 @@ footer>nav {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    list-style: none;
 }
 
 footer>nav>li {
